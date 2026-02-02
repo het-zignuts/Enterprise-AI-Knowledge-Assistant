@@ -38,3 +38,11 @@ data/
 chroma_db/
 recommendations/
 reports/
+test_data
+
+# Chroma / Vector DB
+chroma_db/
+**/chroma_db/
+
+# SQLite files (extra safety)
+*.sqlite3

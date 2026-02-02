@@ -13,3 +13,8 @@ psycopg2-binary
 pypdf
 python-dotenv
 pydantic
+transformers<5.0.0
+huggingface-hub<1.0.0
+sentence-transformers
+langchain-huggingface
+python-multipart
