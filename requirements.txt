@@ -1,0 +1,15 @@
+fastapi
+uvicorn
+langchain
+langchain-community
+langchain-openai
+openai
+langchain-groq
+groq
+chromadb
+sqlmodel
+sqlalchemy
+psycopg2-binary
+pypdf
+python-dotenv
+pydantic
