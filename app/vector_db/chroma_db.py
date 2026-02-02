@@ -9,5 +9,12 @@ def create_vector_data_store(chunks: list[str], collection_name: str):
         collection_name=collection_name,
         persist_directory="./chroma_data"
     )
-    vectordb.persist()
     return vectordb
+
+def load_vectordb(collection_name):
+    embeddings = HuggingFaceEmbeddings(model_name="sentence-transformers/all-MiniLM-L6-v2")
+    return Chroma(
+        collection_name=collection_name,
+        persist_directory="./chroma_data",
+        embedding_function=embeddings
+    )
