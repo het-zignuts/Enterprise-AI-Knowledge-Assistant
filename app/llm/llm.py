@@ -2,6 +2,7 @@ import os
 from langchain_groq import ChatGroq
 from dotenv import load_dotenv
 
+# loading the environment
 load_dotenv()
 
 def get_llm():

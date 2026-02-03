@@ -33,7 +33,7 @@ dist/
 .DS_Store
 Thumbs.db
 
-# Data folder (large files, corpus, DBs)
+# Data folders
 data/
 chroma_db/
 recommendations/
@@ -44,6 +44,7 @@ uploads/
 # Chroma / Vector DB
 chroma_db/
 **/chroma_db/
+chroma_data/
 
-# SQLite files (extra safety)
+# SQLite files
 *.sqlite3
