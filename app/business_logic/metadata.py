@@ -3,17 +3,25 @@ from sqlmodel import Session, select
 from datetime import datetime, timezone
 
 def store_metadata(filename: str, chunk_count: int, collection_name: str, session: Session):
+    """
+    business logc for storing metadata.
+    """
+    # creating model instance
     document=MetadataDocument(
         filename=filename,
         upload_time=datetime.utcnow(),
         chunk_count=chunk_count,
         vector_collection=collection_name
     )
+    # adding to Postgresql database
     session.add(document)
-    session.commit()
-    session.refresh(document)
+    session.commit() # committing changes
+    session.refresh(document) # refreshing session with latest set fields from db
     return document
 
 def get_metadata_docs(collection_name: str, session: Session):
+    """
+    function to retrieve all metadata docs.
+    """
     docs=session.exec(select(MetadataDocument).where(MetadataDocument.vector_collection==collection_name)).all()
     return docs
