@@ -14,6 +14,10 @@ UPLOAD_DIR="uploads"
 
 os.makedirs(UPLOAD_DIR, exist_ok=True)
 
+@router.get("/")
+def health():
+    return {"status": "ok"}
+
 @router.post("/upload")
 async def upload_document(file: UploadFile = File(...)):
     if not file.filename.endswith(".pdf"):
