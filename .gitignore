@@ -39,6 +39,7 @@ chroma_db/
 recommendations/
 reports/
 test_data
+uploads/
 
 # Chroma / Vector DB
 chroma_db/
